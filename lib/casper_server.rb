@@ -5,7 +5,7 @@ require 'casper_reports'
 require 'base64'
 
 class CasperServer < Sinatra::Base
-  VERSION = '0.0.1'
+  VERSION = '0.0.2'
   FORM = /multipart\/form-data/
   XML = /application\/xml/
   JSON = /application\/json/
@@ -24,7 +24,7 @@ class CasperServer < Sinatra::Base
 
     def get_input_data
       if request.content_type =~ FORM
-        [ params['casper']['jrxml'][:tempfile].read, params['casper']['data'][:tempfile].read, param['casper']['xpath']]
+        [ params['casper']['jrxml'][:tempfile].read, params['casper']['data'][:tempfile].read, params['casper']['xpath']]
       elsif request.content_type =~ XML
         #parse xml...
         xml = Crack::XML.parse(request.body.read)
