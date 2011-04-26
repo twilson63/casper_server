@@ -1,0 +1,37 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.7)
+    casperreports (0.0.1)
+    crack (0.1.8)
+    diff-lcs (1.1.2)
+    haml (3.1.1)
+    json (1.5.1-java)
+    rack (1.2.2)
+    rack-test (0.5.7)
+      rack (>= 1.0)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
+    sinatra (1.2.3)
+      rack (~> 1.1)
+      tilt (>= 1.2.2, < 2.0)
+    tilt (1.2.2)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  activesupport (~> 3.0.7)
+  casperreports
+  crack
+  haml
+  json
+  rack-test
+  rspec
+  sinatra

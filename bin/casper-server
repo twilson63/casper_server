@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require File.join(File.dirname(__FILE__), '..','lib', 'casper_server')
+
+require 'fileutils'
+
+if ARGV.first
+  project = ARGV.first
+  FileUtils.mkdir_p project
+
+  config_ru = ["require 'casper_server'", "run CasperServer"].join("\n")
+  File.open(File.join(project, 'config.ru'),'w').write(config_ru)
+  gemfile = ['source :rubygems', "gem 'trinidad'", "gem 'casper_server'"].join("\n")
+  File.open(File.join(project, 'Gemfile'),'w').write(gemfile)
+  puts "****** Sucessfully Created #{project} *******"
+else
+  puts "CasperServer A Jasper Reports Service..."
+  puts "(Please supply a project name for your Casper server...)"
+end

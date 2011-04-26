@@ -1,0 +1,21 @@
+%h1 Casper Reports Test Page
+%p Test your report
+%form{:action => '/', :method => 'POST', :enctype => "multipart/form-data"}
+  %fieldset
+    %legend JRXML
+    %p
+      %label Upload JRXML File
+      %input{:type => 'file', :name => 'casper[jrxml]', :id => 'casper_jrxml'}
+  %fieldset
+    %legend XML DATA
+    %p
+      %label Upload XML File
+      %input{:type => 'file', :name => 'casper[data]', :id => 'casper_data'}
+  %fieldset
+    %legend XPATH Query String
+    %p
+      %label Enter Query String:
+      %input{:type => 'text', :name => 'casper[xpath]', :id => 'casper_xpath'}
+  %fieldset
+    %p
+      %button Generate Report
