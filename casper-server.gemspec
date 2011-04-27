@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tom Wilson"]
   s.email       = ["tom@jackhq.com"]
-  s.homepage    = "http://github.com/twilson63/cloudq"
+  s.homepage    = "http://github.com/twilson63/casper_server"
   s.summary     = "A JRuby Reports Server for Jasper"
   s.description = "The JRuby Reports Server for JasperReports"
   s.required_rubygems_version = ">= 1.3.6"
