@@ -12,6 +12,9 @@
 	<field name="last-name" class="java.lang.String">
 		<fieldDescription><![CDATA[last-name]]></fieldDescription>
 	</field>
+	<field name="work-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[work-phone]]></fieldDescription>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -33,6 +36,11 @@
 				<textElement/>
 				<text><![CDATA[last-name]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="283" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[work-phone]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -46,6 +54,11 @@
 				<reportElement x="137" y="3" width="100" height="20"/>
 				<textElement/>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{last-name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{work-phone}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

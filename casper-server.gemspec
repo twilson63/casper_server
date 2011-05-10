@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rack-test", ">= 0"
 
   s.add_dependency "bundler", ">= 0"
-  s.add_dependency "trinidad", ">= 0"
   s.add_dependency "sinatra", ">= 0"
   s.add_dependency "casperreports", ">= 0"
 
