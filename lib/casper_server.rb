@@ -5,7 +5,7 @@ require 'casper_reports'
 require 'base64'
 
 class CasperServer < Sinatra::Base
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
   FORM = /multipart\/form-data/
   XML = /application\/xml/
   JSON = /application\/json/

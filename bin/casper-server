@@ -9,7 +9,7 @@ if ARGV.first
 
   config_ru = ["require 'casper_server'", "run CasperServer"].join("\n")
   File.open(File.join(project, 'config.ru'),'w').write(config_ru)
-  gemfile = ['source :rubygems', "gem 'trinidad'", "gem 'casper_server'"].join("\n")
+  gemfile = ['source :rubygems', "gem 'casper_server'"].join("\n")
   File.open(File.join(project, 'Gemfile'),'w').write(gemfile)
   puts "****** Sucessfully Created #{project} *******"
 else
