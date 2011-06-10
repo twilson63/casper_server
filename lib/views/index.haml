@@ -17,5 +17,13 @@
       %label Enter Query String:
       %input{:type => 'text', :name => 'casper[xpath]', :id => 'casper_xpath'}
   %fieldset
+    %legend Report type
+    %p
+      %label Enter Report Type:
+      %select{:name => "casper[type]", :id => 'casper_type'}
+        %option{:value => 'pdf'} Pdf
+        %option{:value => 'xls'} Xls
+
+  %fieldset
     %p
       %button Generate Report

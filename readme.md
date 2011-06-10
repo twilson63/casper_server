@@ -80,8 +80,9 @@ On the web page you will be presented with three inputs and a process button.
 The first input will be requesting the jrxml file
 The second input will be requesting the xml document
 The third input will be requesting xpath query string
+The fourth input will be requesting the report type (pdf, xls)
 
-Click Generate Report, and a pdf should stream to your browser.
+Click Generate Report, and a pdf/xls should stream to your browser.
 
 
 

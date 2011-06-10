@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'crack'
@@ -24,29 +25,31 @@ class CasperServer < Sinatra::Base
 
     def get_input_data
       if request.content_type =~ FORM
-        [ params['casper']['jrxml'][:tempfile].read, params['casper']['data'][:tempfile].read, params['casper']['xpath']]
+        [ params['casper']['jrxml'][:tempfile].read, params['casper']['data'][:tempfile].read, params['casper']['xpath'], params['casper']['type']]
       elsif request.content_type =~ XML
         #parse xml...
         xml = Crack::XML.parse(request.body.read)
-        [ decode(xml['casper']['jrxml']), decode(xml['casper']['data']), xml['casper']['xpath']]
+        [ decode(xml['casper']['jrxml']), decode(xml['casper']['data']), xml['casper']['xpath'], params['casper']['type']]
       elsif request.content_type =~ JSON
         json = Crack::JSON.parse(request.body.read)
-        [ decode(json['casper']['jrxml']), decode(json['casper']['data']), json['casper']['xpath']]
-
+        [ decode(json['casper']['jrxml']), decode(json['casper']['data']), json['casper']['xpath'], params['casper']['type']]
       end
     end
   end
 
   post '/' do
 
-    jrxml, xmldata, xpath = get_input_data
-
+    jrxml, xmldata, xpath, type = get_input_data
+    type = 'pdf' unless type
+    
     casper = CasperReports.new
-    pdf = casper.compile jrxml, xmldata, xpath
+    report = casper.compile jrxml, xmldata, xpath, type
 
-    content_type "application/pdf"
-    attachment "casper.pdf"
-    pdf
+    content_type "application/pdf" if type.eql?('pdf')
+    content_type "application/vnd.ms-excel" if type.eql?('xls')
+    
+    attachment "casper.#{type}"
+    report
   end
 
 end

@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "bundler", ">= 0"
   s.add_dependency "sinatra", ">= 0"
-  s.add_dependency "casperreports", ">= 0"
+  s.add_dependency "casperreports", ">= 0.0.2"
 
   s.files        = Dir.glob("{lib}/**/*") + %w(LICENSE readme.md bin/casper-server)
   s.require_path = ['lib']
