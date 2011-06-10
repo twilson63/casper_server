@@ -19,9 +19,7 @@ describe CasperServer do
     }
     # 1613 is the length of the pdf and should prove it worked successfully
     last_response.body.length.should == 1613
-
   end
-
 
   it 'POST / content-type: application/json' do
     json = { :casper =>
@@ -36,6 +34,16 @@ describe CasperServer do
     post '/', json
     # 1613 is the length of the pdf and should prove it worked successfully
     last_response.body.length.should == 1613
+  end
+  
+  it 'POST / type: xls' do
+    post '/', :casper => {
+      :jrxml => Rack::Test::UploadedFile.new(File.join(File.dirname(__FILE__),'data/testreport.jrxml'), 'plain/text'),
+      :data => Rack::Test::UploadedFile.new(File.join(File.dirname(__FILE__),'data/patients.xml'), 'plain/text'),
+      :xpath => '//patient',
+      :type => 'xls'
+    }
+    last_response.body.length.should > 0
   end
 
   # it 'POST / content-type: application/xml' do
