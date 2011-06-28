@@ -6,7 +6,7 @@ require 'casper_server'
 
 Gem::Specification.new do |s|
   s.name        = "casper_server"
-  s.version     = '0.0.3'
+  s.version     = '0.1.0'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Tom Wilson"]
   s.email       = ["tom@jackhq.com"]
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "bundler", ">= 0"
   s.add_dependency "sinatra", ">= 0"
-  s.add_dependency "casperreports", ">= 0.0.2"
+  s.add_dependency "casperreports", ">= 0.1.0"
 
   s.files        = Dir.glob("{lib}/**/*") + %w(LICENSE readme.md bin/casper-server)
   s.require_path = ['lib']

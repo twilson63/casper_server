@@ -3,7 +3,7 @@ source :rubygems
 gem 'sinatra'
 gem 'haml'
 gem 'crack'
-gem 'casperreports'
+gem 'casperreports', '~> 0.1.0'
 gem 'json'
 
 group :development, :test do

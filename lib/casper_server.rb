@@ -6,7 +6,7 @@ require 'casper_reports'
 require 'base64'
 
 class CasperServer < Sinatra::Base
-  VERSION = '0.0.3'
+  VERSION = '0.1.0'
   FORM = /multipart\/form-data/
   XML = /application\/xml/
   JSON = /application\/json/
@@ -41,13 +41,13 @@ class CasperServer < Sinatra::Base
 
     jrxml, xmldata, xpath, type = get_input_data
     type = 'pdf' unless type
-    
+
     casper = CasperReports.new
     report = casper.compile jrxml, xmldata, xpath, type
 
     content_type "application/pdf" if type.eql?('pdf')
     content_type "application/vnd.ms-excel" if type.eql?('xls')
-    
+
     attachment "casper.#{type}"
     report
   end

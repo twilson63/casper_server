@@ -1,6 +1,5 @@
 # Casper Server
 
-(In Development Mode)
 
 # What is this?
 
@@ -48,11 +47,12 @@ POST / {content-type:application/json}
     "jrxml": <base64 encoded jrxml document>,
     "data": <base64 encoded xml document>,
     "xpath": <xpath query string>
+    "type": ('pdf','xls')
   }
 }
 ```
 
-(XML VERSION CURRENTLY NOT WORKING!!!)
+(XML VERSION CURRENTLY NOT WORKING!!! - should be implemented in 0.2.0)
 ```
 POST / {content-type:application/xml}
 #body=>
@@ -60,6 +60,7 @@ POST / {content-type:application/xml}
   <jrxml><![CDATA[{insert jrxml document here}]]></jrxml>
   <data><![CDATA[{insert xml document here}]]></data>
   <xpath><![CDATA[{insert xpath string here}]]></xpath>
+  <type><![CDATA[{'pdf' or 'xls'}]></type>
 </casper>
 
 #RESPONSE=>

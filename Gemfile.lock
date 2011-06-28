@@ -1,8 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.0.7)
-    casperreports (0.0.1)
+    casperreports (0.1.0)
     crack (0.1.8)
     diff-lcs (1.1.2)
     haml (3.1.1)
@@ -27,8 +26,7 @@ PLATFORMS
   java
 
 DEPENDENCIES
-  activesupport (~> 3.0.7)
-  casperreports
+  casperreports (~> 0.1.0)
   crack
   haml
   json
