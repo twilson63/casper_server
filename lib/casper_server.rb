@@ -29,10 +29,10 @@ class CasperServer < Sinatra::Base
       elsif request.content_type =~ XML
         #parse xml...
         xml = Crack::XML.parse(request.body.read)
-        [ decode(xml['casper']['jrxml']), decode(xml['casper']['data']), xml['casper']['xpath'], params['casper']['type']]
+        [ decode(xml['casper']['jrxml']), decode(xml['casper']['data']), xml['casper']['xpath'], xml['casper']['type']]
       elsif request.content_type =~ JSON
         json = Crack::JSON.parse(request.body.read)
-        [ decode(json['casper']['jrxml']), decode(json['casper']['data']), json['casper']['xpath'], params['casper']['type']]
+        [ decode(json['casper']['jrxml']), decode(json['casper']['data']), json['casper']['xpath'], json['casper']['type']]
       end
     end
   end
@@ -44,7 +44,7 @@ class CasperServer < Sinatra::Base
     
     casper = CasperReports.new
     report = casper.compile jrxml, xmldata, xpath, type
-
+    
     content_type "application/pdf" if type.eql?('pdf')
     content_type "application/vnd.ms-excel" if type.eql?('xls')
     
